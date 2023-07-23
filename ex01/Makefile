@@ -6,13 +6,13 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/23 02:29:20 by iamongeo          #+#    #+#              #
-#    Updated: 2023/07/23 01:51:59 by marvin           ###   ########.fr        #
+#    Updated: 2023/07/23 03:37:19 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp
 
-CLS		=	Bureaucrat.cpp
+CLS		=	Bureaucrat.cpp Form.cpp
 
 OBJS	=	$(SRCS:.cpp=.o) $(CLS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 15:53:35 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/07/23 02:40:09 by marvin           ###   ########.fr       */
+/*   Updated: 2023/07/23 03:47:28 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ class BaseGradeException: std::exception
 	public:
 		virtual const char*	what(void) const noexcept;
 };
+
+class Form;
+
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -55,6 +59,8 @@ class Bureaucrat
 		std::string const&	getName(void) const;
 		uint32_t			getGrade(void) const;
 		Bureaucrat&			setGrade(int grade);
+
+		bool				signForm(Form& f) const;
 
 		Bureaucrat& operator++(void);
 		Bureaucrat& operator--(void);

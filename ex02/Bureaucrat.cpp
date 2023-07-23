@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 15:54:46 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/07/23 02:34:23 by marvin           ###   ########.fr       */
+/*   Updated: 2023/07/23 08:03:48 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,47 @@ Bureaucrat&			Bureaucrat::setGrade(int grade)
 		throw GradeTooLowException("Bureaucrats cannot have a grade lower than 150");
 	this->_grade = grade;
 	return (*this);
+}
+
+bool	Bureaucrat::signForm(AForm& f) const
+{
+	bool	success;
+
+	try
+	{
+		f.beSigned(*this);
+		std::cout << _name << " signed " << f.getName() << std::endl;
+		success = true;
+	}
+	catch(const BaseGradeException& e)
+	{
+		std::cerr << _name << " couldn't sign " << f.getName() << " because : " << e.what() << std::endl;
+		success = false;
+	}
+	return (success);
+}
+
+bool	Bureaucrat::executeForm(const AForm& f) const
+{
+	bool	success;
+
+	try
+	{
+		f.execute(*this);
+		std::cout << _name << " executed " << f.getName() << std::endl;
+		success = true;
+	}
+	catch (const BaseGradeException& e)
+	{
+		std::cerr << _name << " couldn't execute " << f.getName() << " because : " << e.what() << std::endl;
+		success = false;
+	}
+	catch (const BaseFormException& e)
+	{
+		std::cerr << _name << " couldn't execute " << f.getName() << " because : " << e.what() << std::endl;
+		success = false;
+	}
+	return (success);
 }
 
 Bureaucrat& Bureaucrat::operator++(void)
