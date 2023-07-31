@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/23 03:37:42 by marvin            #+#    #+#             */
-/*   Updated: 2023/07/23 03:37:42 by marvin           ###   ########.fr       */
+/*   Created: 2023/07/31 19:19:00 by iamongeo          #+#    #+#             */
+/*   Updated: 2023/07/31 19:19:00 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,38 +27,38 @@ int main(void)
 	std::cout << "f2 grade to sign : " << f2.getGradeToSign() << std::endl;
 	std::cout << "f2 grade to execute : " << f2.getGradeToExecute() << std::endl;
 
-	std::cout << std::endl << "Form constructor test : GOOD" << std::endl;
+	std::cout << std::endl << "Form constructor test : Building form without issue:" << std::endl;
 	try {
 		Form	f5("Good Form", 50, 50);}
 	catch (const BaseGradeException& e){
 		std::cerr << e.what() << std::endl;}
 
-	std::cout << std::endl << "Form constructor test : Grade to sign too low" << std::endl;
+	std::cout << std::endl << "Form constructor test : Grade to sign too low:" << std::endl;
 	try {
 		Form	f6("Bad Form signed grade", 1000, 50);}
 	catch (const BaseGradeException& e){
 		std::cerr << e.what() << std::endl;}
 
-	std::cout << std::endl << "Form constructor test : Grade to sign too high" << std::endl;
+	std::cout << std::endl << "Form constructor test : Grade to sign too high: " << std::endl;
 	try {
 		Form	f6("Bad Form signed grade", -100, 50);}
 	catch (const BaseGradeException& e){
 		std::cerr << e.what() << std::endl;}
 
-	std::cout << std::endl << "Form constructor test : Grade to execute too low" << std::endl;
+	std::cout << std::endl << "Form constructor test : Grade to execute too low:" << std::endl;
 	try {
 		Form	f6("Bad Form exec grade", 50, 1000);}
 	catch (const BaseGradeException& e){
 		std::cerr << e.what() << std::endl;}
 
-	std::cout << std::endl << "Form constructor test : Grade to execute too high" << std::endl;
+	std::cout << std::endl << "Form constructor test : Grade to execute too high:" << std::endl;
 	try {
 		Form	f6("Bad Form exec grade", 50, -100);}
 	catch (const BaseGradeException& e){
 		std::cerr << e.what() << std::endl;}
 
-	Bureaucrat	b1("Billy Mayes", 10);
-	Bureaucrat	b2("Jimbo Jones", 110);
+	Bureaucrat	b1("Jimbo Jones", 110);
+	Bureaucrat	b2("Billy Mayes", 10);
 	Bureaucrat	b0("JFC", 2);
 
 	std::cout << std::endl << "Form Signing Test : GOOD" << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 15:54:46 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/07/23 05:02:57 by marvin           ###   ########.fr       */
+/*   Updated: 2023/07/31 19:19:54 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 BaseGradeException::BaseGradeException(void): message("Grade Exception") {};
 BaseGradeException::BaseGradeException(const char *msg): message(msg) {};
-const char*	BaseGradeException::what(void) const noexcept {return (this->message);}
+const char*	BaseGradeException::what(void) const _NOEXCEPT {return (this->message);}
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(void): BaseGradeException("Grade too high exception") {}
 Bureaucrat::GradeTooHighException::GradeTooHighException(const char *msg): BaseGradeException(msg) {}
@@ -54,15 +54,6 @@ Bureaucrat::~Bureaucrat(void) {
 
 std::string const&	Bureaucrat::getName(void) const {return (this->_name);}
 uint32_t			Bureaucrat::getGrade(void) const {return (this->_grade);}
-Bureaucrat&			Bureaucrat::setGrade(int grade)
-{
-	if (_grade <= 1)
-		throw GradeTooHighException("Bureaucrats cannot have a grade higher than 1");
-	else if (_grade >= 150)
-		throw GradeTooLowException("Bureaucrats cannot have a grade lower than 150");
-	this->_grade = grade;
-	return (*this);
-}
 
 bool	Bureaucrat::signForm(Form& f) const
 {

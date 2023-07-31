@@ -48,10 +48,6 @@ Form::Form(Form const& other): _name(other._name), _grade_to_sign(other._grade_t
 Form&	Form::operator=(const Form& obj)
 {
 	std::cout << "Form copy assignment operator" << std::endl;
-
-//	this->_is_signed = obj.getIsSigned();
-//	this->_grade_to_sign = obj.getGradeToSign();
-//	this->_grade_to_exec = obj.getGradeToExecute();
 	return (*this);
 }
 
@@ -65,7 +61,8 @@ Form&	Form::beSigned(const Bureaucrat& bur)
 
 	if (bgrade > _grade_to_sign)
 		throw GradeTooLowException("Grade insufficient to sign this form");
-	_is_signed = true;
+	else
+		_is_signed = true;
 	return (*this);
 }
 
