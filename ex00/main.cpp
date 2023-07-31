@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/23 01:48:31 by marvin            #+#    #+#             */
-/*   Updated: 2023/07/23 01:48:31 by marvin           ###   ########.fr       */
+/*   Created: 2023/07/31 19:01:25 by iamongeo          #+#    #+#             */
+/*   Updated: 2023/07/31 19:01:25 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,12 @@ int main()
 	std::cout << std::endl;
 	std::cout << "Bureaucrat info :" << std::endl;
 	std::cout << b2 << std::endl;
+	std::cout << "Bureaucrat info after promotion:" << std::endl;
+	std::cout << ++b2 << std::endl;
 	std::cout << "Bureaucrat info after demotion:" << std::endl;
 	std::cout << --b2 << std::endl;
-	std::cout << "Bureaucrat info after 3x promotion:" << std::endl;
-	std::cout << (b2 += 3) << std::endl;
+	std::cout << "Bureaucrat info after 2x promotion:" << std::endl;
+	std::cout << (b2 += 2) << std::endl;
 	std::cout << "Bureaucrat info after 10x demotion:" << std::endl;
 	std::cout << (b2 -= 10) << std::endl;
 

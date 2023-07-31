@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 15:53:35 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/07/23 02:40:09 by marvin           ###   ########.fr       */
+/*   Updated: 2023/07/31 19:03:41 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class BaseGradeException: std::exception
 		BaseGradeException(void);
 		BaseGradeException(const char *msg);
 	public:
-		virtual const char*	what(void) const noexcept;
+		virtual const char*	what(void) const _NOEXCEPT;;
 };
 
 class Bureaucrat
@@ -54,7 +54,6 @@ class Bureaucrat
 
 		std::string const&	getName(void) const;
 		uint32_t			getGrade(void) const;
-		Bureaucrat&			setGrade(int grade);
 
 		Bureaucrat& operator++(void);
 		Bureaucrat& operator--(void);
