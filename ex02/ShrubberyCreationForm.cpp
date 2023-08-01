@@ -13,17 +13,15 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(void):
-	AForm("Shrubbery Creation Form", 145, 137),
-	_target("General_purpose")
+	AForm("Shrubbery Creation Form", 145, 137),	_target("General_purpose")
 {
 	std::cout << "ShrubberyCreationForm default constructor" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target):
-	AForm("Shrubbery Creation Form", 145, 137),
-	_target(target)
+	AForm("Shrubbery Creation Form", 145, 137),	_target(target)
 {
-	std::cout << "ShrubberyCreationForm constructor. exec grade : " << getGradeToExecute() << std::endl;
+	std::cout << "ShrubberyCreationForm constructor. " << " sign grade : " << getGradeToSign() << ", exec grade : " << getGradeToExecute() << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other):
@@ -123,10 +121,7 @@ bool    ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 	std::string		tree;
 
 	_check_exec_requirements(executor);
-//		throw GradeTooLowException("Grade insufficient to execute this form");
-
 	get_ascii_tree(tree);
-//	std::cout << tree << std::endl;
 
 	filename = _target + "_shrubbery";
 	file.open(filename, std::fstream::out | std::fstream::app);

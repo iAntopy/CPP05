@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 15:54:46 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/07/23 08:03:48 by marvin           ###   ########.fr       */
+/*   Updated: 2023/07/31 19:36:31 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 BaseGradeException::BaseGradeException(void): message("Grade Exception") {};
 BaseGradeException::BaseGradeException(const char *msg): message(msg) {};
-const char*	BaseGradeException::what(void) const noexcept {return (this->message);}
+const char*	BaseGradeException::what(void) const _NOEXCEPT {return (this->message);}
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(void): BaseGradeException("Grade too high exception") {}
 Bureaucrat::GradeTooHighException::GradeTooHighException(const char *msg): BaseGradeException(msg) {}

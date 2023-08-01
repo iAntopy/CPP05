@@ -13,22 +13,19 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(void):
-	AForm("Robotomy Request Form", 72, 45),
-	_target("General_purpose")
+	AForm("Robotomy Request Form", 72, 45), _target("General_purpose")
 {
 	std::cout << "RobotomyRequestForm default constructor" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target):
-	AForm("Robotomy Request Form", 72, 45),
-	_target(target)
+	AForm("Robotomy Request Form", 72, 45), _target(target)
 {
-	std::cout << "RobotomyRequestForm constructor" << std::endl;
+	std::cout << "RobotomyRequestForm constructor. sign grade : " << getGradeToSign() << ", exec grade : " << getGradeToExecute() << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other):
-	AForm(other),
-	_target(other._target)
+	AForm(other), _target(other._target)
 {
 	std::cout << "RobotomyRequestForm copy constructor" << std::endl;
 }
@@ -49,7 +46,6 @@ bool    RobotomyRequestForm::execute(const Bureaucrat& executor) const
 	int                 pick = rd() % 2;
 
 	_check_exec_requirements(executor);
-		//throw GradeTooLowException("Grade insufficient to execute this form");
 
 	std::cout << std::endl << " * ROBOTOMY PROCEDURE ENGAGED * " << std::endl;
 	std::cout << "BZZZZZZZZZZZZZGHRGHRGHRHGRHGHRGHRKKKKKJJJJZZZZZZZZZ BLIP BLOOP" << std::endl;
@@ -58,7 +54,7 @@ bool    RobotomyRequestForm::execute(const Bureaucrat& executor) const
 	else
 	{
 		std::cout << " * PROCEDURE OVER * WE APPRECIATE YOU TRUSTING US FOR YOUR ROBOTOMY NEEDS * blip boop OUYYYUOOUYYUOOUYYUOO !!! " << std::endl;
-		std::cout << " * Diagnostic : Low resistance to drilling holes in CPU. * " << std::endl;
+		std::cout << " * Diagnostic : Low resistance to holes drilling. * " << std::endl;
 		std::cout << " * " << _target << " * PRESENT YOURSELF TO YOUR LOCAL RECYCLING FACILITY FOR DISPOSAL * GOOD BYE * " << std::endl;
 	}
 	return (true);

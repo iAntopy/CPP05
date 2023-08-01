@@ -26,7 +26,7 @@ class BaseFormException: public std::exception{
 		const char	*message;
 	public:
 		BaseFormException(const char *msg);
-		virtual const char*	what(void) const noexcept;
+		virtual const char*	what(void) const _NOEXCEPT;
 };
 
 class AForm

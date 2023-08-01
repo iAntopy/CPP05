@@ -13,7 +13,7 @@
 #include "AForm.hpp"
 
 BaseFormException::BaseFormException(const char *msg): message(msg) {}
-const char	*BaseFormException::BaseFormException::what(void) const noexcept {return (message);}
+const char	*BaseFormException::BaseFormException::what(void) const _NOEXCEPT {return (message);}
 
 AForm::GradeTooHighException::GradeTooHighException(void): BaseGradeException("Grade too high exception") {}
 AForm::GradeTooHighException::GradeTooHighException(const char *msg): BaseGradeException(msg) {}
@@ -53,10 +53,6 @@ AForm::AForm(AForm const& other): _name(other._name), _grade_to_sign(other._grad
 AForm&	AForm::operator=(const AForm& obj)
 {
 	std::cout << "AForm copy assignment operator" << std::endl;
-
-//	this->_is_signed = obj.getIsSigned();
-//	this->_grade_to_sign = obj.getGradeToSign();
-//	this->_grade_to_exec = obj.getGradeToExecute();
 	return (*this);
 }
 
@@ -76,12 +72,10 @@ AForm&	AForm::beSigned(const Bureaucrat& bur)
 
 void	AForm::_check_exec_requirements(const Bureaucrat& bur) const
 {
-	printf("execute check : bureaucrat grade : %d, grade to exec : %d\n", bur.getGrade(), _grade_to_exec);
 	if (!_is_signed)
 		throw FormUnsignedException("Cannot execute an unsigned form ! That's against the code don't you know !?");
 	else if (bur.getGrade() > _grade_to_exec)
 		throw GradeTooLowException("Grade insufficient to execute this form");
-//	return (_is_signed && (bur.getGrade() <= _grade_to_exec));
 }
 
 const std::string&	AForm::getName(void) const {return (_name);}

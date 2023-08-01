@@ -23,7 +23,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string& target):
 	AForm("Presidential Pardon Form", 25, 5),
 	_target(target)
 {
-	std::cout << "PresidentialPardonForm constructor" << std::endl;
+	std::cout << "PresidentialPardonForm constructor. sign grade : " << getGradeToSign() << ", exec grade : " << getGradeToExecute() << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other):
@@ -47,6 +47,6 @@ bool    PresidentialPardonForm::execute(const Bureaucrat& executor) const
 {
     _check_exec_requirements(executor);
 
-    std::cout << "Congratulations " << _target << ", you have formally been pardoned by President Zaphod Beeblebrox for your filthy, filthy crimes. Now go. He doesn't appreciate your kind loitering around here." << std::endl;
+    std::cout << "Congratulations " << _target << ", you have formally been pardoned by President Zaphod Beeblebrox for your filthy, filthy crimes. Now scram. He doesn't appreciate your kind loitering around these parts." << std::endl;
     return (true);
 }
