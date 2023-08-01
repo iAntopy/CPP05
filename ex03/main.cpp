@@ -11,15 +11,13 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "AForm.hpp"
 #include "Intern.hpp"
 
 int main(void)
 {
-	Intern	jim;
-	AForm*	form;
+	Intern		jim;
+	AForm*		form;
 	Bureaucrat	b3("gibly", 80);
 	Bureaucrat	b2("Big boy pants", 30);
 	Bureaucrat	b1("El Presidente", 1);
@@ -54,7 +52,7 @@ int main(void)
 	}
 
 	std::cout << std::endl;
-	form = jim.makeForm("Some nonexistant form", "NowheresVille");
+	form = jim.makeForm("X TOP SECRET X", "NowheresVille");
 	if (form)
 	{
 		std::cout << *form << std::endl;

@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 19:38:46 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/07/23 21:29:47 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/07/31 22:09:42 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ AForm*	Intern::makeForm(const std::string& form_name, const std::string& target)
 	if (form)
 		std::cout << "Intern creates [ " << form_name << " ] form." << std::endl;
 	else
-		std::cerr << "[ " << form_name << " ] is not a valid form name." << std::endl;
+		std::cerr << "Intern couln't find form named [ " << form_name << " ]." << std::endl;
 	return (form);
 }

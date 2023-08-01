@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/23 16:53:24 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/07/23 20:20:44 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/07/31 22:04:47 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ class Intern
 
 		typedef	struct	s_form_index
 		{
-			std::string			form_name;
+			const std::string	form_name;
 			__factory_method_t	factory_method;
 			//AForm* (*factory_method)(const std::string& target);
 		}	t_form_index;
 
+		static t_form_index	factory_index[3];
+
 		static AForm*	get_shrubbery_creation_form(const std::string& target);
 		static AForm*	get_robotomy_request_form(const std::string& target);
 		static AForm*	get_presidential_pardon_form(const std::string& target);
-		
-		static t_form_index	factory_index[3];
 
 	public:
 
